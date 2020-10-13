@@ -1,4 +1,4 @@
-// const { assert } = require("chai");
+const { assert } = require("chai");
 const { expect } = require("chai");
 // const sinon = require("sinon");
 const phb = require("../app");
@@ -13,8 +13,15 @@ describe("Phonebook unit tests working with array of contacts", () => {
   });
   //Check that adds contacts
   it("adds contacts", () => {
-    phonebook.add({ name: "Tom", telephone: "1234" });
+    phonebook.add("Tom", "1234");
     expect(phonebook.all).to.have.lengthOf(1);
+  });
+  //Check that find works fine
+  it("find throws error", () => {
+    assert.throws(()=>phonebook.find(true), 'Contact not found');
+  });
+  it("find returns index of contact", () => {
+    assert.equal(phonebook.find('Tom'), '0');
   });
   //Check that searches contacts
   it("searches contacts", () => {
@@ -22,7 +29,7 @@ describe("Phonebook unit tests working with array of contacts", () => {
   });
   //Check that updates contacts
   it("updates contacts", () => {
-    phonebook.update('Tom','12345');
+    phonebook.update("Tom", "12345");
     expect(phonebook.search("Tom")).to.equal("Tom: 12345");
   });
   //Check that deletes contacts

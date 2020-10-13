@@ -12,7 +12,7 @@ var Contact = (function () {
     });
     Object.defineProperty(Contact.prototype, "details", {
         get: function () {
-            return;
+            return this.name + ": " + this.telephone;
         },
         enumerable: true,
         configurable: true
@@ -23,17 +23,23 @@ var Phonebook = (function () {
     function Phonebook() {
         this.contacts = [];
     }
+    // Finder
+    Phonebook.prototype.find = function (name) {
+        var contact = this.contacts.find(function (contact) { return contact.name === name; });
+        var index = this.contacts.indexOf(contact);
+        if (index < 0) {
+            throw new Error("Contact not found");
+        }
+        return index;
+    };
     // Create
-    Phonebook.prototype.add = function (contact) {
+    Phonebook.prototype.add = function (name, telephone) {
+        var contact = new Contact(name, telephone);
         this.contacts.push(contact);
     };
     // Read one
     Phonebook.prototype.search = function (name) {
-        var contact = this.contacts.find(function (contact) { return contact.name === name; });
-        var index = this.contacts.indexOf(contact);
-        if (index > -1) {
-            return this.contacts[index].name + ": " + this.contacts[index].telephone;
-        }
+        return "" + this.contacts[this.find(name)].details;
     };
     Object.defineProperty(Phonebook.prototype, "all", {
         // Read all
@@ -45,19 +51,11 @@ var Phonebook = (function () {
     });
     // Update
     Phonebook.prototype.update = function (name, telephone) {
-        var contact = this.contacts.find(function (contact) { return contact.name === name; });
-        var index = this.contacts.indexOf(contact);
-        if (index > -1) {
-            this.contacts[index].telephone = telephone;
-        }
+        this.contacts[this.find(name)].tel = telephone;
     };
     // Delete
     Phonebook.prototype.delete = function (name) {
-        var contact = this.contacts.find(function (contact) { return contact.name === name; });
-        var index = this.contacts.indexOf(contact);
-        if (index > -1) {
-            this.contacts.splice(index, 1);
-        }
+        this.contacts.splice(this.find(name), 1);
     };
     return Phonebook;
 })();
