@@ -6,4 +6,3 @@ var Contact = (function () {
     return Contact;
 })();
 exports["default"] = Contact;
-module.exports = Contact;

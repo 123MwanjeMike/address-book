@@ -7,5 +7,3 @@ export default class Contact {
         this.telephone = telephone;
     }
 }
-
-module.exports = Contact;

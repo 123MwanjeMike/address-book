@@ -1,15 +1,14 @@
+var fs = require("fs");
 var FileManipulator = (function () {
-    function FileManipulator(name) {
-        if (name === void 0) { name = "myContactlist"; }
-        this.fs = require("fs");
+    function FileManipulator() {
+        this.fileName = 'myContactlist.json';
         if (FileManipulator.instances !== 0) {
             return FileManipulator.current;
         }
         else {
             FileManipulator.instances = 1;
             FileManipulator.current = this;
-            this.fileName = name + "'s_contacts.json";
-            this.fs.writeFile(this.fileName, "", function (error) {
+            fs.writeFile(this.fileName, "", function (error) {
                 if (error)
                     throw error;
             });
@@ -18,14 +17,14 @@ var FileManipulator = (function () {
     // Write to phonebook
     FileManipulator.prototype.write = function (contacts) {
         var data = JSON.stringify(contacts);
-        return this.fs.appendFileSync(this.fileName, data);
+        return fs.writeFileSync(this.fileName, data);
     };
     // Read phonebook
     FileManipulator.prototype.read = function () {
-        return JSON.parse(this.fs.readFileSync(this.fileName));
+        var data = fs.readFileSync(this.fileName);
+        return JSON.parse(data);
     };
     FileManipulator.instances = 0;
     return FileManipulator;
 })();
 exports["default"] = FileManipulator;
-module.exports = FileManipulator;
