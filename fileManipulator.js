@@ -8,10 +8,7 @@ var FileManipulator = (function () {
         else {
             FileManipulator.instances = 1;
             FileManipulator.current = this;
-            fs.writeFile(this.fileName, "", function (error) {
-                if (error)
-                    throw error;
-            });
+            this.write('');
         }
     }
     // Write to phonebook

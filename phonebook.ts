@@ -1,7 +1,7 @@
 import Contact from "./contact";
 
 export default class Phonebook {
-  private contacts: Contact[];
+  contacts: Contact[];
   static current: Phonebook;
   static instances: number = 0;
 

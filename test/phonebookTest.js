@@ -1,8 +1,6 @@
-const { assert } = require('chai');
-const { expect } = require('chai');
+const { assert, expect } = require('chai');
+const { describe, it } = require('mocha');
 const sinon = require('sinon');
-const { describe } = require('mocha');
-const { it } = require('mocha');
 const { Phonebook } = require('../app.js');
 
 describe('Phonebook tests', () => {

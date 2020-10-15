@@ -1,6 +1,5 @@
 const { expect } = require('chai');
-const { describe } = require('mocha');
-const { it } = require('mocha');
+const { describe, it } = require('mocha');
 const { Contact } = require('../app.js');
 
 describe('Contact type tests', () => {

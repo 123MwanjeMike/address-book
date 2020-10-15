@@ -11,9 +11,7 @@ export default class FileManipulator {
     } else {
       FileManipulator.instances = 1;
       FileManipulator.current = this;
-      fs.writeFile(this.fileName, "", (error) => {
-        if (error) throw error;
-      });
+      this.write('');
     }
   }
   // Write to phonebook
