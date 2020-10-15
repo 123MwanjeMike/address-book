@@ -1,11 +1,13 @@
-const { expect } = require("chai");
-const Contact = require("../app.js").Contact;
+const { expect } = require('chai');
+const { describe } = require('mocha');
+const { it } = require('mocha');
+const { Contact } = require('../app.js');
 
-describe("Contact type tests", () => {
-  let contact = new Contact("Mike","12345");
+describe('Contact type tests', () => {
+  const contact = new Contact('Mike', '12345');
 
-  //Creates contact instance
-  it("creates FileManipulator instance", () => {
+  // Creates contact instance
+  it('creates FileManipulator instance', () => {
     expect(contact).to.be.an.instanceof(Contact);
   });
 });
