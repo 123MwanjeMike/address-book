@@ -2,7 +2,7 @@ const { assert, expect } = require('chai');
 const { describe, it } = require('mocha');
 const sinon = require('sinon');
 const fs = require('fs');
-const { FileManipulator, Contact } = require('../classes');
+const { FileManipulator, Contact } = require('../exporter');
 
 describe('FileManipulator tests', () => {
   const filer = new FileManipulator();

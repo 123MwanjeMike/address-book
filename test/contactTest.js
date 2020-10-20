@@ -1,6 +1,6 @@
 const { expect } = require('chai');
 const { describe, it } = require('mocha');
-const { Contact } = require('../classes');
+const { Contact } = require('../exporter');
 
 describe('Contact type tests', () => {
   const contact = new Contact('Mike', '12345');

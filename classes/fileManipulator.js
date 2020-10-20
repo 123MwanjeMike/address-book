@@ -8,7 +8,6 @@ var FileManipulator = (function () {
         else {
             FileManipulator.instances = 1;
             FileManipulator.current = this;
-            this.write('');
         }
     }
     // Write to phonebook

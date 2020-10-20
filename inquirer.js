@@ -5,7 +5,7 @@ module.exports = {
     const question = [
       {
         type: 'rawlist',
-        name: 'Otpion',
+        name: 'option',
         message: 'Select an option',
         choices: [
           'Add contact',
@@ -13,6 +13,20 @@ module.exports = {
           'View contacts',
           'Update contact',
           'Delete contact',
+          'Exit',
+        ],
+      },
+    ];
+    return inquirer.prompt(question);
+  },
+  navigate: () => {
+    const question = [
+      {
+        type: 'rawlist',
+        name: 'navigate',
+        message: 'Back?',
+        choices: [
+          'Menu',
           'Exit',
         ],
       },
