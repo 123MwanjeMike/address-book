@@ -1,7 +1,7 @@
 var fs = require("fs");
 var FileManipulator = (function () {
     function FileManipulator() {
-        this.fileName = 'myContactlist.json';
+        this.fileName = 'address-book.json';
         if (FileManipulator.instances !== 0) {
             return FileManipulator.current;
         }

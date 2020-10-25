@@ -4,6 +4,7 @@ const phonebook = new Phonebook();
 const fileManipulator = new FileManipulator();
 
 const addContact = (name, telephone) => {
+  phonebook.contacts = fileManipulator.read();
   phonebook.add(name, telephone);
   fileManipulator.write(phonebook.all);
 };

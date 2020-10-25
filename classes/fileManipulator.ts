@@ -1,7 +1,7 @@
 const fs = require("fs");
 
 export default class FileManipulator {
-  fileName: string = 'myContactlist.json';
+  fileName: string = 'address-book.json';
   static current: FileManipulator;
   static instances: number = 0;
 

@@ -1,4 +1,4 @@
-// const chalk = require('chalk');
+const chalk = require('chalk');
 const clear = require('clear');
 const inquirer = require('./inquirer');
 const {
@@ -22,12 +22,12 @@ const main = async () => {
   const { option } = params;
   if (option === 'Exit') process.exit();
   if (option === 'View contacts') {
-    console.log(viewContacts());
+    console.table(viewContacts());
     back();
   }
   if (option === 'Search contact') {
     const { name } = await inquirer.name();
-    process.stdout.write(`${searchContact(name)}\n`);
+    console.log(chalk.green(searchContact(name)));
     back();
   }
   if (option === 'Delete contact') {
