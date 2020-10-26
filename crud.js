@@ -32,4 +32,5 @@ module.exports = {
   viewContacts,
   searchContact,
   addContact,
+  fileManipulator,
 };
