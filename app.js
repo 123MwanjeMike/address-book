@@ -12,8 +12,8 @@ const {
 const back = async () => {
   const params = await inquirer.navigate();
   const { navigate } = params;
-  if (navigate === 'Menu') main();
-  if (navigate === 'Exit') process.exit();
+  if (navigate === 'Yes') main();
+  if (navigate === 'No') process.exit();
 };
 
 const main = async () => {

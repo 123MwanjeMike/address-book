@@ -24,10 +24,10 @@ module.exports = {
       {
         type: 'rawlist',
         name: 'navigate',
-        message: 'Back?',
+        message: 'Do you want to continue',
         choices: [
-          'Menu',
-          'Exit',
+          'Yes',
+          'No',
         ],
       },
     ];
