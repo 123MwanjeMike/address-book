@@ -22,7 +22,9 @@ const main = async () => {
   const { option } = params;
   if (option === 'Exit') process.exit();
   if (option === 'View contacts') {
-    console.table(viewContacts());
+    const contacts = viewContacts();
+    console.table(contacts);
+    console.log(`Number of contacts: ${chalk.green(contacts.length)}`);
     back();
   }
   if (option === 'Search contact') {
