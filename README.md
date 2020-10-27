@@ -1,2 +1,2 @@
 # address-book
-Console address book application
+console address book application
