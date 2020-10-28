@@ -23,6 +23,6 @@ describe('inquirer.js tests', () => {
   });
   it('inquirer.navigate calls navigate()', async () => {
     navigateStub.onCall(0).returns({ navigate: 'Yes' });
-    expect(inquirer.navigate()).to.deep.equal({ navigate: 'YesMikeMike' });
+    expect(inquirer.navigate()).to.deep.equal({ navigate: 'Yes' });
   });
 });
