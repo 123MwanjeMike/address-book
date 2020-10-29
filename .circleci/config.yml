@@ -1,8 +1,11 @@
 version: 2.1
 orbs:
+  coveralls: coveralls/coveralls@1.0.5
   node: circleci/node@3.0.0
 workflows:
   node-tests:
     jobs:
       - node/test
+      steps:
+        run: npm run coverage
 
