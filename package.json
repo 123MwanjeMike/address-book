@@ -8,8 +8,9 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha || true",
-    "coverage": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha --report lcovonly || true"
+    "test": "nyc mocha || true",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
+    "coverage": "nyc report --reporter=text-lcov | coveralls && nyc report --reporter=lcov"
   },
   "keywords": [
     "address-book",
@@ -30,8 +31,10 @@
     "chai": "^4.2.0",
     "chalk": "^4.1.0",
     "clear": "^0.1.0",
+    "coveralls": "^3.1.0",
     "inquirer": "^7.3.3",
     "mocha": "^8.1.3",
+    "nyc": "^15.1.0",
     "sinon": "^9.2.0"
   }
 }
