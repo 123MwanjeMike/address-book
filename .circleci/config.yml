@@ -6,6 +6,4 @@ workflows:
   node-tests:
     jobs:
       - node/test
-      steps:
-        run: npm run coverage
 
